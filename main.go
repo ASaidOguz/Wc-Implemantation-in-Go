@@ -32,6 +32,8 @@ func main() {
 	fmt.Println("----     -----    ----------")
 	fileName = os.Args[1]
 	file, err := os.Open(fileName)
+	defer file.Close()
+
 	if err != nil {
 		fmt.Println("Err ", err)
 	}
